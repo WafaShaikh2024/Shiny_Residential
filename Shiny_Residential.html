@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shiny Residential Cleaning Services</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Add a background image to the entire page except for the footer */
+      body {
+        background-image: url("img.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        padding-bottom: 60px; /* Adding space for the footer */
+      }
+
+      /* Ensure the content is visible over the background */
+      .content-wrapper {
+        background-color: rgba(223, 222, 222, 0.552);
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .header {
+        background-color: #7db4eba4;
+        color: black;
+        padding: 20px;
+        text-align: center;
+        position: relative;
+      }
+
+      /* Container for the scrolling text */
+      .scrolling-container {
+        position: relative;
+        width: 100%;
+        height: 50px;
+        margin-bottom: 50px; /* Space for popups */
+        overflow: hidden;
+      }
+
+      /* Left part of the scrolling text */
+      .scrolling-left {
+        position: absolute;
+        left: -50%; /* Start off-screen */
+        animation: slide-left 5s ease-in-out forwards;
+        font-weight: bold;
+        font-size: large;
+        white-space: nowrap;
+        z-index: 0; /* Ensure it appears first */
+      }
+
+      /* Right part of the scrolling text */
+      .scrolling-right {
+        position: absolute;
+        right: -50%; /* Start off-screen */
+        animation: slide-right 5s ease-in-out forwards;
+        font-weight: bold;
+        font-size: large;
+        white-space: nowrap;
+        z-index: 0; /* Ensure it appears after */
+      }
+
+      /* Animation to slide text from left to center */
+      @keyframes slide-left {
+        0% {
+          left: -50%;
+        }
+        100% {
+          left: 45%; /* Stop at the center */
+        }
+      }
+
+      /* Animation to slide text from right to center */
+      @keyframes slide-right {
+        0% {
+          right: -50%;
+        }
+        100% {
+          right: 35.5%; /* Stop at the center */
+        }
+      }
+
+      /* Adjusting the popups to appear after the scrolling text */
+      .popup-right,
+      .popup-left {
+        position: absolute;
+        z-index: 1000;
+        background-color: #259aedb4;
+        padding: 15px;
+        border-radius: 10px;
+        font-weight: bold;
+        top: calc(150px + 20px); /* Adjusted for spacing after scrolling text */
+      }
+
+      .popup-right {
+        right: 0;
+        animation: slide-in-right 2s ease-in-out;
+      }
+
+      .popup-left {
+        left: 0;
+        animation: slide-in-left 2s ease-in-out;
+      }
+
+      @keyframes slide-in-right {
+        from {
+          right: -100%;
+        }
+        to {
+          right: 0;
+        }
+      }
+
+      @keyframes slide-in-left {
+        from {
+          left: -100%;
+        }
+        to {
+          left: 0;
+        }
+      }
+
+      /* Space added after the popups to move the content below */
+      .services-section {
+        padding: 20px;
+        margin-top: 100px; /* Space to ensure the section appears after the popups */
+      }
+
+      .container-services-section h2,
+      p1 {
+        color: #000000;
+      }
+
+      .container-services-section p1 {
+        font-weight: 500;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .grid-item {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+        transition: transform 0.3s, background-color 0.3s;
+      }
+
+      .grid-item:hover {
+        transform: scale(1.05);
+        background-color: #2a8bebe7;
+      }
+
+      .footer {
+        background-color: #001f3f;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+      }
+
+      .footer i {
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Wrap content in a div to apply background opacity -->
+    <div class="content-wrapper">
+      <!-- Header section with company name and icon -->
+      <div class="header">
+        <h1><i class="fas fa-home"></i> Shiny Residential Cleaning Services</h1>
+      </div>
+
+      <!-- Scrolling offer text: half from left, half from right -->
+      <div class="scrolling-container">
+        <div class="scrolling-left">20% OFF UNTIL</div>
+        <div class="scrolling-right">AUGUST 31, 2024</div>
+      </div>
+
+      <!-- Popups after scrolling text -->
+      <div class="popup-right" style="top: calc(150px + 20px)">
+        20% OFF UNTIL AUGUST 31, 2024
+      </div>
+      <div class="popup-left" style="top: calc(150px + 20px)">
+        Score a sweet 20% off your debut booking & Enjoy an extra 10% for every
+        buddy you bring along!
+      </div>
+
+      <!-- Services section after popups -->
+      <div class="container-services-section">
+        <h2>Breathe Easy With Our Cleaning Services</h2>
+        <p1>
+          Shiny Residential Home Cleaning is your expert choice for creating
+          clean and healthy homes. Our dedicated team offers tailored cleaning
+          solutions.
+        </p1>
+
+        <div class="grid-container">
+          <div class="grid-item">
+            <h3>General Cleaning Starting at $150</h3>
+            <p>
+              Keeps your home consistently fresh and tidy by addressing dusting,
+              vacuuming, mopping, and surface sanitization.
+            </p>
+          </div>
+          <div class="grid-item">
+            <h3>Deep Cleaning Starting at $250</h3>
+            <p>
+              Our deep cleaning tackles hidden dirt, reviving your space with
+              intensive care for carpets, fixtures, and more.
+            </p>
+          </div>
+          <div class="grid-item">
+            <h3>Kitchen and Bathroom</h3>
+            <p>
+              We sanitize and scrub kitchen and bathroom spaces, eliminating
+              germs and leaving them spotless.
+            </p>
+          </div>
+          <div class="grid-item">
+            <h3>Balcony & Patios</h3>
+            <p>
+              Revitalize your space with our professional service—sweeping,
+              scrubbing, and stain removal for a spotless balcony or patio.
+            </p>
+          </div>
+          <div class="grid-item">
+            <h3>Move-In/Move-Out Cleaning</h3>
+            <p>
+              Our thorough cleaning services prepare your new space or restore
+              your previous one, leaving it immaculate for the next occupants.
+            </p>
+          </div>
+          <div class="grid-item">
+            <h3>Specialized Services</h3>
+            <p>
+              Tailored to your preferences, we create personalized cleaning
+              plans that address your unique requirements.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>
+        <i class="fas fa-phone"></i>437-551-3329 |
+        <i class="fas fa-map-marker-alt"></i>Oakville, Mississauga, Brampton
+      </p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
